@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "site-vercel": "yarn turbo run build --scope='site' --no-deps --include-dependencies",
+    "design-system-vercel": "yarn turbo run build-storybook --scope='design-system' --no-deps --include-dependencies"
+  },
+  "devDependencies": {
+    "eslint": "8.14.0",
+    "prettier": "^2.6.2",
+    "turbo": "1.2.6"
+  },
+  "packageManager": "yarn@1.22.17"
+}
